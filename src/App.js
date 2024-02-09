@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Counter from './component/Counter';
+import Header from './component/Header';
+import ListItems from './component/ListItems';
+import TodoButton from './component/TodoButton';
+import './style.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className='both'>
+
+    <div className="todo-container">
+      <Header title="Counter"/>
+      <Counter/>
     </div>
+    <div className="todo-container">
+      <Header title="Todo list"/>
+      <ListItems completed={false} list="apple"/>
+      <ListItems list="graps"/>
+      <ListItems list="orange"/>
+      <ListItems list="loki"/>
+      <TodoButton btnName="Add Todo"/>
+    </div>
+    </div>
+    </>
   );
 }
 
